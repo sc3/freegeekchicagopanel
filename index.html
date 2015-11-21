@@ -37,13 +37,14 @@
 		@keyframes mymove {
 		    50% {box-shadow: 5px 5px 5px #197319;}
 		}
+
 	</style>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" id="container-tag">
 		
       <div class="row">
-			<div class="col-sm-4">
+			<div class="col-sm-4 col-lg-3">
 	          	<div class="panel panel-success">
 	            	<div class="panel-heading">
 	              		<h3 class="panel-title">
@@ -56,20 +57,18 @@
           			</div>
           		</div>
 			</div>
-			<div class="col-sm-8">
+			<div class="col-sm-8 col-lg-5">
 	          	<div class="panel panel-success">
 	            	<div class="panel-heading">
 	              		<h3 class="panel-title">Events Calendar
 						</h3>
 		            </div>
 		            <div class="panel-body">
-						<iframe src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%23875509&amp;src=8mvc0jhmvuodvmsmh825nimgbg%40group.calendar.google.com&amp;color=%2328754E&amp;src=5vhhcg3klqvksmts5grfhsfeb4%40group.calendar.google.com&amp;color=%23B1440E&amp;src=0u83up8g5j1l4fcfhv1s9bts0c%40group.calendar.google.com&amp;color=%230F4B38&amp;src=jrjl6uo39cm9das4ik8n61ihjg%40group.calendar.google.com&amp;color=%23853104&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FChicago" width="100%" height="500"></iframe>
+						<iframe id="calendar-iframe" src="https://www.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%23875509&amp;src=8mvc0jhmvuodvmsmh825nimgbg%40group.calendar.google.com&amp;color=%2328754E&amp;src=5vhhcg3klqvksmts5grfhsfeb4%40group.calendar.google.com&amp;color=%23B1440E&amp;src=0u83up8g5j1l4fcfhv1s9bts0c%40group.calendar.google.com&amp;color=%230F4B38&amp;src=jrjl6uo39cm9das4ik8n61ihjg%40group.calendar.google.com&amp;color=%23853104&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%232F6309&amp;ctz=America%2FChicago" width="100%" height="500"></iframe>
 					</div>
 				</div>
 			</div>
-        </div>
-          <div class="row">
-			<div class="col-sm-12">
+			<!--<div class="col-sm-4 col-lg-5" id="cta-top">
 	          	<div class="panel panel-success">
 	            	<div class="panel-heading">
 	              		<h3 class="panel-title">CTA - System Information
@@ -80,7 +79,30 @@
 					</div>
 				</div>
 			</div>              
+        </div>
+        <div class="row" id="cta-bottom">-->
+			<div class="col-sm-12 col-lg-4">
+	          	<div class="panel panel-success">
+	            	<div class="panel-heading">
+	              		<h3 class="panel-title">CTA - System Information
+						</h3>
+		            </div>
+		            <div class="panel-body">
+						<div><p style="margin-bottom:3px"><a href="https://data.cityofchicago.org/Transportation/CTA-System-Information-Map-Showing-Bus-Stop-Shelte/mw4h-s8xu" target="_blank" style="font-size:12px;font-weight:bold;text-decoration:none;color:#333333;font-family:arial;">Map Showing Bus Stop Shelters in Digital Sign Project</a></p><iframe id="cta-iframe" width="100%" title="CTA - System Information - Map Showing Bus Stop Shelters in Digital Sign Project" height="540px" src="http://www.transitchicago.com/diydisplay/?s1=5562&n1=Milwaukee+%26+Diversey%2fKimball&s2=17413&n2=Milwaukee+%26+Diversey%2fKimball&s3=11267&n3=Kimball+%26+Diversey%2fMilwaukee&s4=11143&n4=Kimball+%26+Diversey%2fMilwaukee&s5=17413&n5=Milwaukee+%26+Diversey%2fKimball&s6=11071&n6=Diversey+%26+Milwaukee%2fKimball&size=small&w=0" frameborder="0"scrolling="no"><a href="https://data.cityofchicago.org/Transportation/CTA-System-Information-Map-Showing-Bus-Stop-Shelte/mw4h-s8xu" title="CTA - System Information - Map Showing Bus Stop Shelters in Digital Sign Project" target="_blank">CTA - System Information - Map Showing Bus Stop Shelters in Digital Sign Project</a></iframe><p><a href="http://www.socrata.com/" target="_blank">Powered by Socrata</a></p></div>
+					</div>
+				</div>
+			</div>              
 		</div>
   </div>  
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if($(document).width() > 1170) {
+				$("#cta-iframe").css("height", $(window).height() - 175 + "px");
+				$("#calendar-iframe").css("height", $(window).height() - 120 + "px");
+
+				//$("#twitter-widget-0").css("height", $(window).height() - 120  + "px");
+			}
+		});
+	</script>
 </body>
 </html>
